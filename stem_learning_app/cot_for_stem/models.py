@@ -1,7 +1,6 @@
-import uuid
-
-from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import User
+import uuid
 
 
 class Document(models.Model):

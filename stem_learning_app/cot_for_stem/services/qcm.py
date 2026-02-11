@@ -1,5 +1,5 @@
-from celery import shared_task
-
+from celery import shared_task, chain
+import json
 from ..models import Exercise, Step, QCM, Choice
 
 

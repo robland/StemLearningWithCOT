@@ -2,13 +2,18 @@
 import json
 
 from django.http import HttpResponse
-from rest_framework import status
-from rest_framework.response import Response
+from rest_framework.parsers import FileUploadParser
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
-from .serializer import *
+from .services.openai_vision import ExerciseVisionService
+
+from .models import Document, Exercise
 from .tasks import process_document_pipeline
 from .utils import calculate_file_hash
+
+from .serializer import *
 
 
 class DocumentUploadView(APIView):

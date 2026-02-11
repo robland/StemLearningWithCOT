@@ -1,0 +1,131 @@
+openapi: 3.0.3
+info:
+  title: STEM API
+  version: 1.0.0
+  description: Provide an App to add young student to understand STEM with chain of
+    thoughts methodology.
+paths:
+  /api/stem/exercise/:
+    get:
+      operationId: stem_exercise_retrieve
+      description: |-
+        Reçoit un fichier (déjà uploadé sur S3 ou autre)
+        et déclenche l’analyse pédagogique.
+      tags:
+      - stem
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/stem/qcm/{id}/:
+    get:
+      operationId: stem_qcm_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - stem
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/stem/step/{id}/:
+    get:
+      operationId: stem_step_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - stem
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/stem/upload/document/:
+    post:
+      operationId: stem_upload_document_create
+      tags:
+      - stem
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadDocument'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UploadDocument'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadDocument'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadDocument'
+          description: ''
+components:
+  schemas:
+    FileTypeEnum:
+      enum:
+      - image
+      - pdf
+      type: string
+      description: |-
+        * `image` - Image
+        * `pdf` - PDF
+    ProcessingStatusEnum:
+      enum:
+      - pending
+      - analyzing
+      - generating
+      - done
+      - error
+      type: string
+      description: |-
+        * `pending` - En attente
+        * `analyzing` - Analyse
+        * `generating` - Génération QCM
+        * `done` - Terminé
+        * `error` - Erreur
+    UploadDocument:
+      type: object
+      properties:
+        file:
+          type: string
+          format: uri
+        file_type:
+          $ref: '#/components/schemas/FileTypeEnum'
+        processing_status:
+          $ref: '#/components/schemas/ProcessingStatusEnum'
+      required:
+      - file
+      - file_type
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
