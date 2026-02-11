@@ -1,10 +1,10 @@
 import json
 
-from celery import shared_task
-
-from .qcm import generate_qcm
+from celery import shared_task, chain
 from ..models import Exercise, Document
 from ..services.openai_vision import ExerciseVisionService
+from .qcm import generate_qcm
+from django.utils.html import escape
 
 
 @shared_task

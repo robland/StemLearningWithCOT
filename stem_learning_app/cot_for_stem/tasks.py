@@ -1,6 +1,7 @@
 from celery import shared_task, chain
-
+from .models import Document
 from .services.analysis import analyze_document
+from .services.qcm import generate_qcm
 
 
 @shared_task
