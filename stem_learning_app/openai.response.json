@@ -1,0 +1,123 @@
+{
+  "exercise_1": [
+    {
+      "step_number": 1,
+      "objective": "Valider qu’un couple donné est solution d’une équation diophantienne.",
+      "question": "Le couple (5, -2) est-il solution de l'équation 3x + 7y = 1 ?",
+      "choices": [
+        "A: Oui, car 3*5 + 7*(-2) = 1",
+        "B: Non, car 3*5 + 7*(-2) ≠ 1",
+        "C: Oui, car 5 + (-2) = 1",
+        "D: Non, car 3*5 - 7*2 = 1"
+      ],
+      "correct_answer": "A",
+      "explanation": "Calculer 3*5 + 7*(-2) = 15 - 14 = 1, donc le couple est solution."
+    },
+    {
+      "step_number": 2,
+      "objective": "Résoudre une équation diophantienne linéaire 3x + 7y = 1 dans ℤ×ℤ.",
+      "question": "Quelle est la forme générale des solutions de 3x + 7y = 1 ?",
+      "choices": [
+        "A: (x, y) = (5 - 7k, -2 + 3k) où k est un entier relatif",
+        "B: (x, y) = (5 + 7k, -2 - 3k) où k est un entier relatif",
+        "C: (x, y) = (5k, -2k) où k est un entier relatif",
+        "D: (x, y) = (7k, 3k) où k est un entier relatif"
+      ],
+      "correct_answer": "A",
+      "explanation": "Solution générale d'une équation diophantienne est de la forme (x0 - b*k, y0 + a*k) ici a=3,b=7, solution particulière (5,-2)."
+    },
+    {
+      "step_number": 3,
+      "objective": "Montrer la forme des solutions de l’équation 3x + 7y = 10^n pour n entier naturel.",
+      "question": "Quelles sont les solutions de l’équation (E): 3x + 7y = 10^n ?",
+      "choices": [
+        "A: (x,y) = (5×10^n - 7k, -2×10^n + 3k), k entier relatif",
+        "B: (x,y) = (5×10^n + 7k, -2×10^n - 3k), k entier relatif",
+        "C: (x,y) = (10^n, 0)",
+        "D: (x,y) = (0, 10^n)"
+      ],
+      "correct_answer": "A",
+      "explanation": "En multipliant la solution particulière de 3x + 7y=1 par 10^n et en ajoutant la solution homogène de la forme (7k,-3k)."
+    },
+    {
+      "step_number": 4,
+      "objective": "Montrer une propriété de divisibilité impliquant 100 et 2^7.",
+      "question": "Quelle affirmation est vraie concernant la divisibilité ?",
+      "choices": [
+        "A: 100 est divisible par 2^7",
+        "B: 100 n’est pas divisible par 2^7",
+        "C: 100 est un multiple de 7",
+        "D: 2^7 divise toujours 10^n"
+      ],
+      "correct_answer": "B",
+      "explanation": "100 = 2^2 × 5^2, donc 100 n’est pas divisible par 2^7."
+    },
+    {
+      "step_number": 5,
+      "objective": "Utiliser la condition qu’un couple (x,y) solution de G implique une propriété sur 3x^2 modulo 7.",
+      "question": "Si (x,y) est solution de G, que peut-on dire de 3x^2 modulo 7 ?",
+      "choices": [
+        "A: 3x^2 ≡ 2^n mod 7",
+        "B: 3x^2 ≡ 0 mod 7",
+        "C: 3x^2 est divisible par 7",
+        "D: 3x^2 ≡ 1 mod 7"
+      ],
+      "correct_answer": "A",
+      "explanation": "D’après l’énoncé, on doit montrer que 3x^2 = 2^n [7] pour (x,y) solution."
+    },
+    {
+      "step_number": 6,
+      "objective": "Analyser les restes possibles de 2^n modulo 7.",
+      "question": "Quels sont les restes possibles de 2^n modulo 7 ?",
+      "choices": [
+        "A: 1, 2, 4",
+        "B: 1, 2, 4, 8",
+        "C: 1, 2, 3, 4, 5, 6",
+        "D: 1, 2, 4, 5, 6"
+      ],
+      "correct_answer": "A",
+      "explanation": "Les puissances de 2 modulo 7 suivent le cycle : 1,2,4,1,2,4,..."
+    },
+    {
+      "step_number": 7,
+      "objective": "Utiliser les restes de 3x^2 modulo 7 pour montrer qu’il n’existe pas de solution à l’équation (G).",
+      "question": "Quels sont les restes possibles de 3x^2 modulo 7, et cela permet-il une solution à (G) ?",
+      "choices": [
+        "A: Les restes sont 0,3,5,6 et aucun ne correspond aux restes de 2^n. Donc pas de solutions.",
+        "B: Les restes sont 0,1,2 et donc il y a solution.",
+        "C: Les restes sont 1,2,4 et il y a solution.",
+        "D: Les restes couvrent tous les cas possibles, donc solutions possibles."
+      ],
+      "correct_answer": "A",
+      "explanation": "Les restes de 3x^2 mod 7 ne coïncident pas avec ceux de 2^n mod 7 d’après le tableau, donc pas de solution."
+    }
+  ],
+  "exercise_2": [
+    {
+      "step_number": 1,
+      "objective": "Construire un triangle équilatéral avec une base donnée et placer les points symétriques demandés.",
+      "question": "Quelle est la bonne méthode pour construire un triangle équilatéral OBC avec BC horizontal et de longueur 5 cm, et placer A et D symétriques respectivement des points C et B par rapport à O ?",
+      "choices": [
+        "A: Tracer BC horizontal de 5 cm, puis construire A tel que OBC soit équilatéral, puis D symétrique de B par rapport à O",
+        "B: Tracer OB horizontal de 5 cm, puis construire C, puis placer A et D partout",
+        "C: Construire un triangle quelconque et poser A, D au hasard",
+        "D: Tracer BC vertical et construire A et D sans symétries"
+      ],
+      "correct_answer": "A",
+      "explanation": "La construction commence par la base BC horizontale de 5 cm, puis on place A pour avoir un triangle équilatéral, enfin on place symétriquement A et D."
+    },
+    {
+      "step_number": 2,
+      "objective": "Identifier les points milieux demandés dans la figure construite.",
+      "question": "Quels sont les points milieux I,J,H,L des segments AB, BC, CD et DA, respectivement ?",
+      "choices": [
+        "A: I milieu de AB, J milieu de BC, H milieu de CD, L milieu de DA",
+        "B: I milieu de BC, J milieu de CD, H milieu de DA, L milieu de AB",
+        "C: I milieu de DA, J milieu de AB, H milieu de BC, L milieu de CD",
+        "D: I milieu de CD, J milieu de DA, H milieu de AB, L milieu de BC"
+      ],
+      "correct_answer": "A",
+      "explanation": "L’énoncé demande explicitement ces milieux, il faut les identifier correctement pour la suite."
+    }
+  ]
+}
